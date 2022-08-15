@@ -545,6 +545,7 @@ ggplot(dataplot_dis_r, aes(x = variable, y = rating)) +
   stat_summary(aes(fill=condition), fun.y ="mean", geom="point", color="black", 
                size = 3, shape=15, position=position_dodge(width=.5), show.legend=FALSE) +
   theme(plot.title = element_text(margin=margin(b = 25, unit = "pt"))) +
+  theme(axis.text.y = element_text(color="black")) +
   scale_y_continuous(limits=c(0,100)) 
 
 
@@ -587,6 +588,7 @@ ggplot(dataplot_acpt, aes(x = variable, y = rating)) +
   stat_summary(aes(fill=condition), fun.y ="mean", geom="point", color="black", 
                size = 3, shape=15, position=position_dodge(width=.5), show.legend=FALSE) +
   scale_y_continuous(limits=c(8,40)) +
+  theme(axis.text.y = element_text(color="black")) +
   theme(plot.title = element_text(margin=margin(b = 25, unit = "pt")))
 
 ggsave(filename="plots/acceptability.pdf", width=5.5, height=5.5, units="in", dpi=600)
